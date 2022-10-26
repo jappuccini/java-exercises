@@ -42,5 +42,4 @@ public class Vehicle {
   public void print() {
     System.out.println(make + " " + model + " (" + engine.getDescription() + ")");
   }
-
 }

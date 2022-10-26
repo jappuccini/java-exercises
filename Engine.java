@@ -1,5 +1,4 @@
 public enum Engine {
-
   DIESEL("Diesel"),
   PETROL("Benzin"),
   GAS("Gas"),
@@ -14,5 +13,4 @@ public enum Engine {
   public String getDescription() {
     return description;
   }
-
 }
