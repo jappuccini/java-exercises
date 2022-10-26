@@ -9,6 +9,7 @@ public class Exercise {
     System.out.print("Gib bitte einen Wert zwischen -1 und -32.768 ein: ");
     short s = sc.nextShort();
 
-    System.out.println("Ergebnis: Der vorzeichenfreie Dezimalwert betraegt " + Short.toUnsignedInt(s));
+    System.out.println(
+        "Ergebnis: Der vorzeichenfreie Dezimalwert betraegt " + Short.toUnsignedInt(s));
   }
 }
