@@ -2,23 +2,50 @@ public class Exercise {
 
   public static void main(String[] args) {
 
-    int[][] input = {{5, 8, 2}, {9, 6, 10}, {10, 2, 7}, {1, 9, 5}};
-    int[][] output = new int[input.length][2];
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
 
-    for (int i = 0; i < input.length; i++) {
-      int min = input[i][0];
-      int max = input[i][0];
-      for (int j = 0; j < input[i].length; j++) {
-        max = (input[i][j] > max) ? input[i][j] : max;
-        min = (input[i][j] < min) ? input[i][j] : min;
-      }
-      output[i][0] = min;
-      output[i][1] = max;
-    }
+		ArrayList<String> tasks = new ArrayList<>();
 
-    System.out.println("MIN - MAX");
-    for (int i = 0; i < output.length; i++) {
-      System.out.println(output[i][0] + " - " + output[i][1]);
-    }
+		System.out.println("Optionen");
+		System.out.println("1: Aufgabe hinzufuegen");
+		System.out.println("2: Aufgabe loeschen");
+		System.out.println("3: Aufgaben ausgeben");
+		System.out.println("4: Beenden");
+		System.out.println();
+
+		boolean loop = true;
+		do {
+
+			System.out.print("Was moechtest Du tun?: ");
+			int answer = sc.nextInt();
+
+			switch (answer) {
+			case 1:
+				System.out.print("Gib bitte die Aufgabenbeschreibung ein: ");
+				sc.nextLine();
+				String task = sc.nextLine();
+				tasks.add(task);
+				break;
+			case 2:
+				System.out.print("Gib bitte ein, welche Aufgabe geloescht werden soll: ");
+				int index = sc.nextInt();
+				tasks.remove(index);
+				break;
+			case 3:
+				System.out.println();
+				System.out.println("Aufgaben");
+				for (int i = 0; i < tasks.size(); i++) {
+					System.out.println(i + ": " + tasks.get(i));
+				}
+				System.out.println();
+				break;
+			case 4:
+				loop = false;
+				break;
+			}
+
+		} while (loop);
+
   }
 }
