@@ -17,5 +17,4 @@ public class DiceCup {
       System.out.println(dice.getId() + " - " + dice.getValue());
     }
   }
-
 }
