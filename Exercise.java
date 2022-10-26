@@ -8,6 +8,5 @@ public class Exercise {
     vampire.attackCreature(zombie);
     zombie.attackCreature(vampire);
     vampire.attackCreature(zombie);
-
   }
 }
