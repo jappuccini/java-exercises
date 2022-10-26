@@ -2,7 +2,7 @@ public class Exercise {
 
   public static void main(String[] args) {
 
-    Vehicle vehicle = new Vehicle("Porsche", "911" );
+    Vehicle vehicle = new Vehicle("Porsche", "911");
 
     vehicle.accelerate(30);
     vehicle.accelerate(30);
