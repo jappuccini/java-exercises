@@ -4,11 +4,9 @@ public class Vehicle {
   private String model;
   private double speed;
 
-  public void setMake(String make) {
-    this.make = make;
-  }
 
-  public void setModel(String model) {
+  public Vehicle(String make, String model) {
+    this.make = make;
     this.model = model;
   }
 
