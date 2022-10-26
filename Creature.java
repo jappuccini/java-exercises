@@ -24,8 +24,13 @@ public class Creature {
 
   public void attackCreature(Creature creature) {
     creature.hitpoints -= this.attackValue;
-    System.out.println(this.name + " greift " + creature.name + " an und erzielt " + this.attackValue + " Schaden");
+    System.out.println(
+        this.name
+            + " greift "
+            + creature.name
+            + " an und erzielt "
+            + this.attackValue
+            + " Schaden");
     System.out.println(creature.name + " hat noch " + creature.hitpoints + " Lebenspunkte");
   }
-
 }
