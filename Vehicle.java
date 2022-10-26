@@ -3,10 +3,12 @@ public class Vehicle {
   private String make;
   private String model;
   private double speed;
+  private static int numberOfVehicles;
 
   public Vehicle(String make, String model) {
     this.make = make;
     this.model = model;
+    numberOfVehicles++;
   }
 
   public String getMake() {
@@ -15,6 +17,10 @@ public class Vehicle {
 
   public String getModel() {
     return model;
+  }
+
+  public static int getNumberOfVehicles() {
+    return numberOfVehicles;
   }
 
   public void accelerate(int value) {
