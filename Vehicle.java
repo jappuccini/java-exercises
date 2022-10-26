@@ -46,5 +46,4 @@ public class Vehicle {
   public String toString() {
     return make + " " + model;
   }
-
 }
