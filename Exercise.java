@@ -19,6 +19,5 @@ public class Exercise {
 
     System.out.printf("x1 = %.1f%n", x1);
     System.out.printf("x2 = %.1f%n", x2);
-
   }
 }
