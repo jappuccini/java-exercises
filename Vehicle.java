@@ -46,4 +46,5 @@ public class Vehicle {
   public static int getNumberOfVehicles() {
     return Vehicle.numberOfVehicles;
   }
+
 }
