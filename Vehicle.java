@@ -38,7 +38,7 @@ public abstract class Vehicle {
     System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
   }
 
-  public final void brake(int value) throws InvalidValueException  {
+  public final void brake(int value) throws InvalidValueException {
     if (value <= 0) {
       throw new InvalidValueException();
     }
