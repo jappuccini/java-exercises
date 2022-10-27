@@ -20,15 +20,6 @@ public class Rental {
     }
   }
 
-  public void transformAllTrucks() {
-    for (Vehicle c : vehicles) {
-      if (c instanceof Truck) {
-        Truck t = (Truck) c;
-        t.transform();
-      }
-    }
-  }
-
   public void print() {
     System.out.println(name);
     System.out.println("Unsere Fahrzeuge: ");
