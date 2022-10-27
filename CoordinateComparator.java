@@ -6,5 +6,4 @@ public class CoordinateComparator implements Comparator<Coordinate> {
   public int compare(Coordinate c1, Coordinate c2) {
     return Double.valueOf(c1.getDistanceToOriginPoint()).compareTo(c2.getDistanceToOriginPoint());
   }
-
 }
