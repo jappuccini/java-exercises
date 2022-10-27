@@ -1,4 +1,4 @@
-public class Truck extends Vehicle {
+public final class Truck extends Vehicle {
 
   private int cargo;
   private boolean isTransformed;
