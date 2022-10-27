@@ -3,7 +3,7 @@ public class Vehicle {
   private String make;
   private String model;
   private Engine engine;
-  private double speed;
+  protected double speed;
   private static int numberOfVehicles;
 
   public Vehicle(String make, String model, Engine engine) {
