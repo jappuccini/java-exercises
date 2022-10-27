@@ -22,6 +22,19 @@ public class Employee {
     return salary;
   }
 
+  public void setSalary(int salary) throws SalaryDecreaseException, SalaryIncreaseTooHighException {
+    if (this.salary > salary) {
+      throw new SalaryDecreaseException();
+    }
+
+    double change = (double) (salary - this.salary) / this.salary;
+    if (change > 0.1) {
+      throw new SalaryIncreaseTooHighException();
+    }
+
+    this.salary = salary;
+  }
+
   public void print() {
     System.out.println(employeeId + " - " + getName() + " - " + salary + "€");
   }
