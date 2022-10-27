@@ -27,7 +27,13 @@ public class Creature {
   }
 
   public boolean attackCreature(Creature creature) {
-    System.out.println(this.name + " greift " + creature.name + " an und erzielt " + this.attackValue + " Schaden");
+    System.out.println(
+        this.name
+            + " greift "
+            + creature.name
+            + " an und erzielt "
+            + this.attackValue
+            + " Schaden");
     if (this.attackValue >= creature.hitpoints) {
       creature.hitpoints = 0;
       System.out.println(creature.name + " wurde vernichtet");
