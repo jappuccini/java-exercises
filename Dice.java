@@ -3,7 +3,7 @@ import java.util.Random;
 public class Dice {
 
   private int id;
-  private int value;
+  protected int value;
 
   public Dice(int id) {
     this.id = id;
