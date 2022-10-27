@@ -19,7 +19,8 @@ public class Truck extends Vehicle {
   public void transform() {
     if (isTransformed) {
       isTransformed = false;
-      System.out.println(getMake() + " " + getModel() + " verwandelt sich in einen Lastwagen zurueck");
+      System.out.println(
+          getMake() + " " + getModel() + " verwandelt sich in einen Lastwagen zurueck");
     } else {
       isTransformed = true;
       System.out.println(getMake() + " " + getModel() + " verwandelt sich in einen Autobot");
@@ -27,6 +28,7 @@ public class Truck extends Vehicle {
   }
 
   public void print() {
-    System.out.println(getMake() + " " + getModel() + " (" + getEngine().getDescription() + ", " + cargo + "t)");
+    System.out.println(
+        getMake() + " " + getModel() + " (" + getEngine().getDescription() + ", " + cargo + "t)");
   }
 }
