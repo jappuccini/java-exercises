@@ -13,6 +13,15 @@ public class Exercise {
     rental.addVehicle(truck1);
     rental.addVehicle(car2);
 
+    try {
+      car1.accelerate(50);
+      truck1.accelerate(30);
+      car2.accelerate(-20);
+      car1.brake(5);
+    } catch (InvalidValueException e) {
+      System.err.println(e.getMessage());
+    }
+
     travelAgency.print();
   }
 }
