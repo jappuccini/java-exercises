@@ -1,7 +1,7 @@
 public class Exercise {
 
   public static void main(String[] args) {
-    System.out.println("Anzahl Fahrzeuge: " + Vehicle.getNumberOfVehicles());
+    Rental rental = new Rental("Fahrzeugvermietung Mueller");
 
     Car car1 = new Car("Porsche", "911", Engine.ELECTRO, 2);
     Truck truck1 = new Truck("MAN", "TGX", Engine.DIESEL, 20);
@@ -17,5 +17,10 @@ public class Exercise {
     truck1.transform();
     car1.doATurboBoost();
     truck1.transform();
+    rental.addVehicle(car1);
+    rental.addVehicle(truck1);
+    rental.addVehicle(car2);
+
+    rental.print();
   }
 }
