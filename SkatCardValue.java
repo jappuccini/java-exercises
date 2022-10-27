@@ -1,5 +1,4 @@
 public enum SkatCardValue {
-
   SEVEN("7", 0),
   EIGHT("8", 0),
   NINE("9", 0),

@@ -1,5 +1,4 @@
 public enum SkatCardColor {
-
   DIAMONDS("Karo"),
   HEARTS("Herz"),
   SPADE("Pik"),
