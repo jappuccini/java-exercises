@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -35,8 +34,12 @@ public class DiceGame {
         bestPlayer = player;
       }
     }
-    System.out
-      .println("Der Sieger heisst " + bestPlayer.getName() + " und hat " + bestPlayer.getScore() + " Punkte");
+    System.out.println(
+        "Der Sieger heisst "
+            + bestPlayer.getName()
+            + " und hat "
+            + bestPlayer.getScore()
+            + " Punkte");
   }
 
   private void move(Player player) {
