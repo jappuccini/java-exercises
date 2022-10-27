@@ -1,4 +1,4 @@
-public class Car extends Vehicle {
+public final class Car extends Vehicle {
 
   private int seats;
 

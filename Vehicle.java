@@ -1,4 +1,4 @@
-public class Vehicle {
+public abstract class Vehicle {
 
   private String make;
   private String model;
@@ -29,17 +29,15 @@ public class Vehicle {
     return numberOfVehicles;
   }
 
-  public void accelerate(int value) {
+  public final void accelerate(int value) {
     speed += value;
     System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
   }
 
-  public void brake(int value) {
+  public final void brake(int value) {
     speed -= value;
     System.out.println(make + " " + model + " bremst auf " + speed + "km/h ab");
   }
 
-  public void print() {
-    System.out.println(make + " " + model + " (" + engine.getDescription() + ")");
-  }
+  public abstract void print();
 }
