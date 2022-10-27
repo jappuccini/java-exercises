@@ -17,6 +17,14 @@ public class Exercise {
     company.addEmployee(new Employee(4, new Person("Peter Schneider"), 55000));
     company.addEmployee(new Employee(5, new Person("Miriam Albers"), 90000));
 
+    try {
+      e1.setSalary(55000);
+      e2.setSalary(77000);
+      e3.setSalary(45000);
+    } catch (SalaryDecreaseException | SalaryIncreaseTooHighException e) {
+      System.err.println(e.getMessage());
+    }
+
     company.print();
   }
 }
