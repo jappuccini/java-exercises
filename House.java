@@ -22,7 +22,6 @@ public class House {
 
     private String name;
 
-
     public Room(String name) {
       this.name = name;
     }
