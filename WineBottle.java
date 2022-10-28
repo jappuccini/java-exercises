@@ -1,2 +1,1 @@
-public class WineBottle extends Bottle {
-}
+public class WineBottle extends Bottle {}

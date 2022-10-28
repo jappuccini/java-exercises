@@ -1,2 +1,1 @@
-public abstract class Bottle {
-}
+public abstract class Bottle {}
