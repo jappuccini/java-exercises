@@ -47,7 +47,8 @@ public class Company {
       return salary;
     }
 
-    public void setSalary(int salary) throws SalaryDecreaseException, SalaryIncreaseTooHighException {
+    public void setSalary(int salary)
+        throws SalaryDecreaseException, SalaryIncreaseTooHighException {
       if (salary < this.salary) {
         throw new SalaryDecreaseException();
       }
