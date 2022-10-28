@@ -13,14 +13,12 @@ public class Exercise {
     coordinates.add(new Coordinate(6, 8));
     coordinates.add(new Coordinate(1, 9));
 
-    class CoordinateComparator implements Comparator<Coordinate> {
+    Collections.sort(coordinates, new Comparator<Coordinate>() {
       @Override
       public int compare(Coordinate c1, Coordinate c2) {
-        return Integer.valueOf(c1.getX()).compareTo(c2.getX());
+        return Integer.valueOf(c1.getY()).compareTo(c2.getY());
       }
-    }
-
-    Collections.sort(coordinates, new CoordinateComparator());
+    });
 
     for (Coordinate c : coordinates) {
       System.out.println(c + ": " + c.getDistanceToOriginPoint());
