@@ -1,6 +1,5 @@
 public class Crate<T> {
 
-
   private T box1;
   private T box2;
   private T box3;
