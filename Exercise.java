@@ -1,7 +1,7 @@
 public class Exercise {
 
   public static void main(String[] args) {
-    Crate crate = new Crate();
+    Crate<Bottle> crate = new Crate<Bottle>();
 
     try {
       crate.insertBottle(new BeerBottle(), 1);
