@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Exercise {
 
@@ -13,14 +12,7 @@ public class Exercise {
     coordinates.add(new Coordinate(6, 8));
     coordinates.add(new Coordinate(1, 9));
 
-    Collections.sort(
-        coordinates,
-        new Comparator<Coordinate>() {
-          @Override
-          public int compare(Coordinate c1, Coordinate c2) {
-            return Integer.valueOf(c1.getY()).compareTo(c2.getY());
-          }
-        });
+    Collections.sort(coordinates, (c1, c2) -> Integer.valueOf(c2.getX()).compareTo(c1.getX()));
 
     for (Coordinate c : coordinates) {
       System.out.println(c + ": " + c.getDistanceToOriginPoint());
