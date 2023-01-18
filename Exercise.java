@@ -6,10 +6,10 @@ public class Exercise {
     @SuppressWarnings("resource")
     Scanner sc = new Scanner(System.in);
 
-    System.out.print("Gib bitte den Namen eingeben: ");
+    System.out.print("Gib bitte den Nachnamen ein: ");
     String name = sc.next();
 
-    System.out.print("Gib bitte das Geschlecht eingeben (m, w, d): ");
+    System.out.print("Gib bitte das Geschlecht an (m, w, d): ");
     char gender = sc.next().charAt(0);
 
     String title;
