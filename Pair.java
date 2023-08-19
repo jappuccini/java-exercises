@@ -1,2 +1,1 @@
-public record Pair<T>(T partA, T partB) {
-}
+public record Pair<T>(T partA, T partB) {}

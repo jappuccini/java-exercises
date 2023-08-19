@@ -1,1 +1,1 @@
-public record Club(String name, int marketValueInMillions) { }
+public record Club(String name, int marketValueInMillions) {}
