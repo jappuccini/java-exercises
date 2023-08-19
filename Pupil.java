@@ -1,3 +1,1 @@
-public record Pupil(String name, String gender) {
-
-}
+public record Pupil(String name, String gender) {}
