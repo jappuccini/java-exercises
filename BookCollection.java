@@ -6,38 +6,38 @@ import java.util.Optional;
 
 public record BookCollection(HashMap<Author, List<Book>> collection) {
 
-    public void addAuthor(Author author) throws DuplicateKeyException {
-        if (collection.containsKey(author)) {
-            throw new DuplicateKeyException();
+  public void addAuthor(Author author) throws DuplicateKeyException {
+    if (collection.containsKey(author)) {
+      throw new DuplicateKeyException();
+    }
+
+    collection.put(author, new ArrayList<>());
+  }
+
+  public void addBook(Author author, Book book) {
+    collection.get(author).add(book);
+  }
+
+  public Optional<Book> getBookByTitle(String title) {
+    for (List<Book> books : collection.values()) {
+      for (Book b : books) {
+        if (b.title().equals(title)) {
+          return Optional.of(b);
         }
-
-        collection.put(author, new ArrayList<>());
+      }
     }
+    return Optional.empty();
+  }
 
-    public void addBook(Author author, Book book) {
-        collection.get(author).add(book);
+  public Optional<Author> getMostDiligentAuthor() {
+    Author mostDiligentAuthor = null;
+    int mostBooks = 0;
+    for (Entry<Author, List<Book>> entry : collection.entrySet()) {
+      if (entry.getValue().size() > mostBooks) {
+        mostDiligentAuthor = entry.getKey();
+        mostBooks = entry.getValue().size();
+      }
     }
-
-    public Optional<Book> getBookByTitle(String title) {
-        for (List<Book> books : collection.values()) {
-            for (Book b : books) {
-                if (b.title().equals(title)) {
-                    return Optional.of(b);
-                }
-            }
-        }
-        return Optional.empty();
-    }
-
-    public Optional<Author> getMostDiligentAuthor() {
-        Author mostDiligentAuthor = null;
-        int mostBooks = 0;
-        for (Entry<Author, List<Book>> entry : collection.entrySet()) {
-            if (entry.getValue().size() > mostBooks) {
-                mostDiligentAuthor = entry.getKey();
-                mostBooks = entry.getValue().size();
-            }
-        }
-        return Optional.ofNullable(mostDiligentAuthor);
-    }
+    return Optional.ofNullable(mostDiligentAuthor);
+  }
 }

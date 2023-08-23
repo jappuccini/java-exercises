@@ -1,3 +1,1 @@
-public record Author(String Name) {
-
-}
+public record Author(String Name) {}

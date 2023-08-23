@@ -1,4 +1,1 @@
-public record Book(String title) {
-    
-
-}
+public record Book(String title) {}

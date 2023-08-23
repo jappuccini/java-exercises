@@ -23,7 +23,5 @@ public class Exercise {
 
     System.out.println(collection.getBookByTitle("Das Lied von Eis und Feuer 5"));
     System.out.println(collection.getMostDiligentAuthor());
-
   }
-
 }
