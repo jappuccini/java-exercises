@@ -18,5 +18,21 @@ public class Example {
         // Intermediation Operations sind optional
         names.stream()
                 .forEach(System.out::println);
+
+        // Terminal ist erforderlich!
+        // Denn ohne Terminal Operation passiert nichts:
+        names.stream()
+                .map(name -> {
+                    System.out.println("Map Funktion"); // wird nicht ausgegeben
+                    return name;
+                });
+
+        // Mit Terminal Operation passiert was:
+        names.stream()
+                .map(name -> {
+                    System.out.println("Map Funktion"); // wird ausgegeben
+                    return name;
+                })
+                .forEach(System.out::println);
     }
 }
