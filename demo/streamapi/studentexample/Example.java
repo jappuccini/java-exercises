@@ -19,5 +19,14 @@ public class Example {
             }
         }
         System.out.println(numberOfStudents);
+
+        // Manipulation von Collections mit der Stream API
+        long sum = students.stream()
+                .filter(student -> student.firstName().length() > 4)
+                .filter(student -> student.age() > 24)
+                .map(student -> student.firstName() + student.lastName())
+                .filter(fullName -> fullName.length() > 20)
+                .count();
+        System.out.println(sum);
     }
 }
