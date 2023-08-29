@@ -14,5 +14,9 @@ public class Example {
                 .map(name -> name.toUpperCase())
                 .limit(2)
                 .forEach(System.out::println);
+
+        // Intermediation Operations sind optional
+        names.stream()
+                .forEach(System.out::println);
     }
 }
