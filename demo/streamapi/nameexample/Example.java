@@ -1,6 +1,7 @@
 package demo.streamapi.nameexample;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class Example {
     public static void main(String[] args) {
@@ -34,5 +35,13 @@ public class Example {
                     return name;
                 })
                 .forEach(System.out::println);
+
+        // Pipeline nur einmal Nutzbar
+        Stream<String> namesStream1 = names.stream()
+                .filter(name -> name.length() > 4)
+                .map(name -> name.toUpperCase())
+                .limit(2);
+        namesStream1.forEach(System.out::println);
+        namesStream1.forEach(System.out::println); // funktioniert nicht, da schon ausgeführt
     }
 }
