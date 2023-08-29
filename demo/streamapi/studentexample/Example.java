@@ -9,6 +9,7 @@ public class Example {
     // static lambdas
     public static Predicate<Student> minimumFirstName = student -> student.firstName().length() > 4;
     public static Predicate<Student> olderThan24Years = student -> student.age() > 24;
+    public static Function<Student, String> toFullName = student -> student.firstName() + student.lastName();
 
     // dynamic lambdas
     public static Predicate<Student> olderThanYears(int maxAge) {
@@ -22,7 +23,10 @@ public class Example {
         };
     }
 
-    public static Function<Student, String> toFullName = student -> student.firstName() + student.lastName();
+    // composed lambdas
+    public static Predicate<Student> composedLambdas(int maxAge, int maxFullLength) {
+        return olderThanYears(maxAge).and(fullNameIsLongerThan(maxFullLength)).and(minimumFirstName);
+    }
 
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<>();
@@ -78,5 +82,10 @@ public class Example {
 
         students.forEach((student) -> new OneTimePrinter(student));
         students.forEach(OneTimePrinter::new);
+
+        long sum4 = students.stream()
+                .filter(Introduction.composedLambdas(24, 20))
+                .count();
+        System.out.println(sum4);
     }
 }
