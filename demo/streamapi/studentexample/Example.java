@@ -65,5 +65,18 @@ public class Example {
                 .filter(fullNameIsLongerThan(20))
                 .count();
         System.out.println(sum3);
+
+        // Methodenreferenzen
+        students.forEach((student) -> System.out.println(student));
+        students.forEach(System.out::println);
+
+        class OneTimePrinter {
+            public OneTimePrinter(Object o) {
+                System.out.println("Printer: " + o);
+            }
+        }
+
+        students.forEach((student) -> new OneTimePrinter(student));
+        students.forEach(OneTimePrinter::new);
     }
 }
