@@ -84,7 +84,7 @@ public class Example {
         students.forEach(OneTimePrinter::new);
 
         long sum4 = students.stream()
-                .filter(Introduction.composedLambdas(24, 20))
+                .filter(Example.composedLambdas(24, 20))
                 .count();
         System.out.println(sum4);
     }
