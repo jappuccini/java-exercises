@@ -6,6 +6,7 @@ public class Exercise {
 
     FilteredStudents adultStudents = new FilteredStudents((student) -> student.age > 18);
     adultStudents.add(steffen);
+    steffen.age = 17;
     adultStudents.add(kid);
     adultStudents.forEach(student -> System.out.println(student.name.toUpperCase()));
 
