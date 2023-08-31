@@ -5,5 +5,4 @@ public class Exercise {
     System.out.println(queries.getAllConsolesByMaker());
     // make more queries as you wish
   }
-
 }

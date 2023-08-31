@@ -22,15 +22,13 @@ public class Queries {
   }
 
   public Map<Maker, List<Console>> getAllConsolesByMaker() {
-    return consoles.stream()
-        .collect(Collectors.groupingBy(console -> console.maker()));
+    return consoles.stream().collect(Collectors.groupingBy(console -> console.maker()));
   }
 
   public List<Console> getAllConsolesSortedByLifespan() {
-    Comparator<Console> lifeSpanAscending = (console1, console2) -> Integer.compare(console1.lifespan(), console2.lifespan());
-    return consoles.stream()
-        .sorted(lifeSpanAscending)
-        .collect(Collectors.toList());
+    Comparator<Console> lifeSpanAscending =
+        (console1, console2) -> Integer.compare(console1.lifespan(), console2.lifespan());
+    return consoles.stream().sorted(lifeSpanAscending).collect(Collectors.toList());
   }
 
   public OptionalDouble getAverageSoldUnitsInMillionsPerYearFromAllOutdatedConsoles() {
@@ -41,35 +39,35 @@ public class Queries {
   }
 
   public long getNumberOfConsolesFromNintendo() {
-    return consoles.stream()
-        .filter(console -> console.maker().equals(Maker.NINTENDO))
-        .count();
+    return consoles.stream().filter(console -> console.maker().equals(Maker.NINTENDO)).count();
   }
 
   public List<String> getSoldUnitsInMillionsPerYearFromAllOutdatedConsoles() {
     return consoles.stream()
         .filter(console -> console.lifespan() != -1)
-        .map(console -> console.title() + " (" + console.soldUnitsInMillions() / console.lifespan() + ")")
+        .map(
+            console ->
+                console.title() + " (" + console.soldUnitsInMillions() / console.lifespan() + ")")
         .toList();
   }
 
   public Map<Maker, Double> getTotalSoldUnitsInMillionsPerMaker() {
     Function<Entry<Maker, List<Console>>, Maker> entrySetToMaker = entrySet -> entrySet.getKey();
-    Function<Entry<Maker, List<Console>>, Double> entrySetToSoldUnits = entrySet -> entrySet.getValue().stream()
-        .mapToDouble(console -> console.soldUnitsInMillions())
-        .sum();
+    Function<Entry<Maker, List<Console>>, Double> entrySetToSoldUnits =
+        entrySet ->
+            entrySet.getValue().stream()
+                .mapToDouble(console -> console.soldUnitsInMillions())
+                .sum();
 
     return getAllConsolesByMaker().entrySet().stream()
         .collect(Collectors.toMap(entrySetToMaker, entrySetToSoldUnits));
   }
 
   public boolean isAllConsolesWithMoreThan50MillionSoldUnits() {
-    return consoles.stream()
-        .allMatch(console -> console.soldUnitsInMillions() > 50);
+    return consoles.stream().allMatch(console -> console.soldUnitsInMillions() > 50);
   }
 
   public boolean isAnyConsoleWithMoreThan150MillionSoldUnits() {
-    return consoles.stream()
-        .anyMatch(console -> console.soldUnitsInMillions() > 150);
+    return consoles.stream().anyMatch(console -> console.soldUnitsInMillions() > 150);
   }
 }
