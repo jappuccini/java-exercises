@@ -1,5 +1,5 @@
 public enum Maker {
-    MICROSOFT,
-    NINTENDO,
-    SONY;
+  MICROSOFT,
+  NINTENDO,
+  SONY;
 }
