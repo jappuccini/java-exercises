@@ -2,6 +2,8 @@ package demo.streamapi.groupbyexample;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Example {
     public static void main(String[] args) {
@@ -11,5 +13,7 @@ public class Example {
                 new Car("Audi", "A4", 170),
                 new Car("Audi", "A5", 214)));
 
+        Map<String, List<Car>> brandMap = cars.stream().collect(Collectors.groupingBy(car -> car.brand()));
+        brandMap.get("BMW").stream().forEach((System.out::println));
     }
 }
