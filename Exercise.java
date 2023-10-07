@@ -1,7 +1,7 @@
 public class Exercise {
 
   public static void main(String[] args) {
-    int[][] input = { { 5, 8, 2 }, { 9, 6, 10 }, { 10, 2, 7 }, { 1, 9, 5 } };
+    int[][] input = {{5, 8, 2}, {9, 6, 10}, {10, 2, 7}, {1, 9, 5}};
     int[][] output = new int[input.length][2];
 
     for (int i = 0; i < input.length; i++) {
