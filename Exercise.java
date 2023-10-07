@@ -25,7 +25,6 @@ public class Exercise {
     } while (loop);
 
     scanner.close();
-
   }
 
   static double calculateInterestPerAnnum(int k, double p) {
