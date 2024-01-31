@@ -1,8 +1,8 @@
 public class Exercise {
 
   public static void main(String[] args) {
-    int[] one = { 1, 2, 3, 4 };
-    int[] two = { 5, 6, 7, 8 };
+    int[] one = {1, 2, 3, 4};
+    int[] two = {5, 6, 7, 8};
     int[] both = Exercise.merge(one, two);
     for (int number : both) {
       System.out.println(number);
