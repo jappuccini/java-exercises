@@ -2,7 +2,7 @@ public class Vehicle {
 
   private String make;
   private String model;
-  private double speed;
+  private double speedInKmh;
 
   public Vehicle(String make, String model) {
     this.make = make;
@@ -17,17 +17,21 @@ public class Vehicle {
     return model;
   }
 
-  public void accelerate(int value) {
-    speed += value;
-    System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
+  public double getSpeedInKmh() {
+    return speedInKmh;
   }
 
-  public void brake(int value) {
-    speed -= value;
-    System.out.println(make + " " + model + " bremst auf " + speed + "km/h ab");
+  public void accelerate(int valueInKmh) {
+    speedInKmh += valueInKmh;
+    System.out.println(make + " " + model + " beschleunigt auf " + speedInKmh + "km/h");
   }
 
-  public void print() {
-    System.out.println(make + " " + model);
+  public void brake(int valueInKmh) {
+    speedInKmh -= valueInKmh;
+    System.out.println(make + " " + model + " bremst auf " + speedInKmh + "km/h ab");
+  }
+
+  public String toString() {
+    return make + " " + model;
   }
 }
