@@ -8,6 +8,7 @@ public class Vehicle {
   public Vehicle(String make, String model) {
     this.make = make;
     this.model = model;
+    Vehicle.numberOfVehicles++;
   }
 
   public String getMake() {
