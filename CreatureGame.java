@@ -2,7 +2,7 @@ public class CreatureGame {
 
   private Creature creature1;
   private Creature creature2;
-  private int noRounds;
+  private int numberOfRounds;
 
   public CreatureGame(Creature creature1, Creature creature2) {
     this.creature1 = creature1;
@@ -10,10 +10,10 @@ public class CreatureGame {
   }
 
   private void print() {
-    System.out.print("Runde " + noRounds + ": ");
-    creature1.print();
+    System.out.print("Runde " + numberOfRounds + ": ");
+    System.out.print(creature1.toString());
     System.out.print(", ");
-    creature2.print();
+    System.out.print(creature2.toString());
     System.out.println();
   }
 
@@ -22,7 +22,7 @@ public class CreatureGame {
   }
 
   public void simulateFight() {
-    noRounds = 1;
+    numberOfRounds = 1;
     while (true) {
       print();
       if (move(creature1, creature2)) {
@@ -32,7 +32,7 @@ public class CreatureGame {
         break;
       }
       System.out.println();
-      noRounds++;
+      numberOfRounds++;
     }
   }
 }

@@ -45,7 +45,7 @@ public class Creature {
     }
   }
 
-  public void print() {
-    System.out.print(name + " (" + attackValue + " - " + hitpoints + ")");
+  public String toString() {
+    return name + " (" + attackValue + " - " + hitpoints + ")";
   }
 }
