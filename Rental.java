@@ -10,6 +10,14 @@ public class Rental {
     vehicles = new ArrayList<>();
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public ArrayList<Vehicle> getVehicles() {
+    return vehicles;
+  }
+
   public void addVehicle(Vehicle vehicle) {
     vehicles.add(vehicle);
   }
@@ -20,11 +28,12 @@ public class Rental {
     }
   }
 
-  public void print() {
-    System.out.println(name);
-    System.out.println("Unsere Fahrzeuge: ");
-    for (Vehicle v : vehicles) {
-      v.print();
+  public String toString() {
+    String result = name + "\n"
+        + "Unsere Fahrzeuge: \n";
+    for (Vehicle vehicle : vehicles) {
+      result += vehicle.toString() + "\n";
     }
+    return result;
   }
 }
