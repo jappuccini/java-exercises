@@ -14,10 +14,22 @@ public class Car extends Vehicle {
   public void doATurboBoost() {
     speedInKmh *= 2;
     System.out.println(
-        getMake() + " " + getModel() + " macht einen Turboboost und beschleunigt auf " + speedInKmh + " km/h");
+        getMake()
+            + " "
+            + getModel()
+            + " macht einen Turboboost und beschleunigt auf "
+            + speedInKmh
+            + " km/h");
   }
 
   public String toString() {
-    return getMake() + " " + getModel() + " (" + getEngine().getDescription() + ", " + seats + " Sitzplaetze)";
+    return getMake()
+        + " "
+        + getModel()
+        + " ("
+        + getEngine().getDescription()
+        + ", "
+        + seats
+        + " Sitzplaetze)";
   }
 }
