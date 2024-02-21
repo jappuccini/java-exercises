@@ -29,8 +29,7 @@ public class Rental {
   }
 
   public String toString() {
-    String result = name + "\n"
-        + "Unsere Fahrzeuge: \n";
+    String result = name + "\n" + "Unsere Fahrzeuge: \n";
     for (Vehicle vehicle : vehicles) {
       result += vehicle.toString() + "\n";
     }

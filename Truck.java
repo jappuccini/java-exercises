@@ -18,7 +18,8 @@ public class Truck extends Vehicle {
 
   public void transform() {
     if (isTransformed) {
-      System.out.println(getMake() + " " + getModel() + " verwandelt sich in einen Lastwagen zurueck");
+      System.out.println(
+          getMake() + " " + getModel() + " verwandelt sich in einen Lastwagen zurueck");
     } else {
       System.out.println(getMake() + " " + getModel() + " verwandelt sich in einen Autobot");
     }
