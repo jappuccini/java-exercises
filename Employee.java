@@ -1,13 +1,13 @@
 public class Employee {
 
-  private int employeeId;
-  private Person person;
-  private int salary;
+  private final int employeeId;
+  private final Person person;
+  private int salaryInEuro;
 
-  public Employee(int employeeId, Person person, int salary) {
+  public Employee(int employeeId, Person person, int salaryInEuro) {
     this.employeeId = employeeId;
     this.person = person;
-    this.salary = salary;
+    this.salaryInEuro = salaryInEuro;
   }
 
   public int getEmployeeId() {
@@ -18,11 +18,15 @@ public class Employee {
     return person.getName();
   }
 
-  public int getSalary() {
-    return salary;
+  public int getSalaryInEuro() {
+    return salaryInEuro;
   }
 
-  public void print() {
-    System.out.println(employeeId + " - " + getName() + " - " + salary + "€");
+  public void setSalaryInEuro(int salaryInEuro) {
+    this.salaryInEuro = salaryInEuro;
+  }
+
+  public String toString() {
+    return employeeId + " - " + getName() + " - " + salaryInEuro + "€";
   }
 }
