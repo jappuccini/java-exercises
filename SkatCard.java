@@ -1,7 +1,7 @@
 public class SkatCard {
 
-  private SkatCardColor color;
-  private SkatCardValue value;
+  private final SkatCardColor color;
+  private final SkatCardValue value;
 
   public SkatCard(SkatCardColor color, SkatCardValue value) {
     this.color = color;

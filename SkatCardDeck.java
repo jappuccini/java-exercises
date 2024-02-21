@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class SkatCardDeck {
 
-  private ArrayList<SkatCard> skatCards;
+  private final ArrayList<SkatCard> skatCards;
 
   public SkatCardDeck() {
     skatCards = new ArrayList<>();

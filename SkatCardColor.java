@@ -1,10 +1,10 @@
 public enum SkatCardColor {
-  DIAMONDS("Karo"),
-  HEARTS("Herz"),
-  SPADE("Pik"),
-  CLUBS("Kreuz");
+  DIAMONDS("Diamonds"),
+  HEARTS("Hearts"),
+  SPADE("Spade"),
+  CLUBS("Clubs");
 
-  private String description;
+  private final String description;
 
   SkatCardColor(String description) {
     this.description = description;
