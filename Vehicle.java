@@ -21,16 +21,12 @@ public class Vehicle {
     return model;
   }
 
-  public double getSpeedInKmh() {
-    return speedInKmh;
-  }
-
   public Engine getEngine() {
     return engine;
   }
 
-  public static int getNumberOfVehicles() {
-    return Vehicle.numberOfVehicles;
+  public double getSpeedInKmh() {
+    return speedInKmh;
   }
 
   public void accelerate(int valueInKmh) {
@@ -45,5 +41,9 @@ public class Vehicle {
 
   public String toString() {
     return make + " " + model;
+  }
+
+  public static int getNumberOfVehicles() {
+    return Vehicle.numberOfVehicles;
   }
 }
