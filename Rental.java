@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Rental {
 
-  private String name;
-  private ArrayList<Vehicle> vehicles;
+  private final String name;
+  private final ArrayList<Vehicle> vehicles;
 
   public Rental(String name) {
     this.name = name;
