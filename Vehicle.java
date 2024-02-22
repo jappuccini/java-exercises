@@ -2,15 +2,15 @@ public class Vehicle {
 
   private String make;
   private String model;
+  protected double speedInKmh;
   private Engine engine;
-  protected double speed;
   private static int numberOfVehicles;
 
   public Vehicle(String make, String model, Engine engine) {
     this.make = make;
     this.model = model;
+    Vehicle.numberOfVehicles++;
     this.engine = engine;
-    numberOfVehicles++;
   }
 
   public String getMake() {
@@ -25,21 +25,25 @@ public class Vehicle {
     return engine;
   }
 
+  public double getSpeedInKmh() {
+    return speedInKmh;
+  }
+
+  public void accelerate(int valueInKmh) {
+    speedInKmh += valueInKmh;
+    System.out.println(toString() + " beschleunigt auf " + speedInKmh + "km/h");
+  }
+
+  public void brake(int valueInKmh) {
+    speedInKmh -= valueInKmh;
+    System.out.println(toString() + " bremst auf " + speedInKmh + "km/h ab");
+  }
+
+  public String toString() {
+    return make + " " + model;
+  }
+
   public static int getNumberOfVehicles() {
-    return numberOfVehicles;
-  }
-
-  public void accelerate(int value) {
-    speed += value;
-    System.out.println(make + " " + model + " beschleunigt auf " + speed + "km/h");
-  }
-
-  public void brake(int value) {
-    speed -= value;
-    System.out.println(make + " " + model + " bremst auf " + speed + "km/h ab");
-  }
-
-  public void print() {
-    System.out.println(make + " " + model + " (" + engine.getDescription() + ")");
+    return Vehicle.numberOfVehicles;
   }
 }
