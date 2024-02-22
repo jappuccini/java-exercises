@@ -4,7 +4,7 @@ public enum Engine {
   GAS("Gas"),
   ELECTRO("Elektro");
 
-  private String description;
+  private final String description;
 
   Engine(String description) {
     this.description = description;

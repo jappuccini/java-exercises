@@ -1,6 +1,6 @@
 public class Truck extends Vehicle {
 
-  private int cargo;
+  private final int cargo;
   private boolean isTransformed;
 
   public Truck(String make, String model, Engine engine, int cargo) {
@@ -18,17 +18,15 @@ public class Truck extends Vehicle {
 
   public void transform() {
     if (isTransformed) {
-      isTransformed = false;
       System.out.println(
           getMake() + " " + getModel() + " verwandelt sich in einen Lastwagen zurueck");
     } else {
-      isTransformed = true;
       System.out.println(getMake() + " " + getModel() + " verwandelt sich in einen Autobot");
     }
+    isTransformed = !isTransformed;
   }
 
-  public void print() {
-    System.out.println(
-        getMake() + " " + getModel() + " (" + getEngine().getDescription() + ", " + cargo + "t)");
+  public String toString() {
+    return getMake() + " " + getModel() + " (" + getEngine().getDescription() + ", " + cargo + "t)";
   }
 }
