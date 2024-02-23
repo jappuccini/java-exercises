@@ -31,6 +31,11 @@ public class Exercise {
     // default -> "";
     // };
 
-    System.out.println("Hallo " + title + " " + name);
+    String output = "Hallo";
+    if (!title.equals("")) { // otherwise double empty space for divers people
+      output += " ";
+    }
+    output += title + " " + name;
+    System.out.println(output);
   }
 }
