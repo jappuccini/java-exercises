@@ -40,7 +40,7 @@ public class Vehicle {
   }
 
   public String toString() {
-    return make + " " + model;
+    return getMake() + " " + getModel() + " (" + getEngine().getDescription() + ")";
   }
 
   public static int getNumberOfVehicles() {
