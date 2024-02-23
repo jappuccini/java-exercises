@@ -32,7 +32,8 @@ public class Rental {
     for (Vehicle c : vehicles) {
       if (c instanceof Truck) {
         Truck t = (Truck) c;
-        t.transform();
+        if (!t.isTransformed())
+          t.transform();
       }
     }
   }
