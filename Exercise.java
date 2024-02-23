@@ -21,6 +21,8 @@ public class Exercise {
     rental.addVehicle(truck1);
     rental.addVehicle(car2);
 
+    rental.transformAllTrucks();
+
     System.out.println(rental.toString());
   }
 }
