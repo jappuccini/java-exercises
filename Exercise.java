@@ -25,6 +25,31 @@ public class Exercise {
       System.err.println(e.getMessage());
     }
 
+    // alternative multiple catch:
+    try {
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
+    } catch (SalaryDecreaseException e) {
+      System.out.println("Das neue Gehalt muss hoeher sein als das bisherige");
+    } catch (SalaryIncreaseTooHighException e) {
+      System.out.println("Das neue Gehalt darf maximal 10% ueber dem bisherigen Gehalt liegen");
+    }
+
+    // alternative instance of
+    try {
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
+    } catch (Exception e) {
+      if (e instanceof SalaryDecreaseException) {
+        System.out.println("Das neue Gehalt muss hoeher sein als das bisherige");
+      }
+      if (e instanceof SalaryIncreaseTooHighException) {
+        System.out.println("Das neue Gehalt darf maximal 10% ueber dem bisherigen Gehalt liegen");
+      }
+    }
+
     System.out.println(company.toString());
   }
 }
