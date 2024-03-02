@@ -24,7 +24,7 @@ public class Employee {
 
   public void setSalaryInEuro(int salaryInEuro)
       throws SalaryDecreaseException, SalaryIncreaseTooHighException {
-    if (salaryInEuro > salaryInEuro) {
+    if (this.salaryInEuro > salaryInEuro) {
       throw new SalaryDecreaseException();
     }
 
