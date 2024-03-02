@@ -18,13 +18,13 @@ public class Exercise {
     company.addEmployee(new Employee(5, new Person("Miriam Albers"), 90000));
 
     try {
-      e1.setSalary(55000);
-      e2.setSalary(77000);
-      e3.setSalary(45000);
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
     } catch (SalaryDecreaseException | SalaryIncreaseTooHighException e) {
       System.err.println(e.getMessage());
     }
 
-    company.print();
+    System.out.println(company.toString());
   }
 }

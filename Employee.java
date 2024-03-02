@@ -1,13 +1,13 @@
 public class Employee {
 
-  private int employeeId;
-  private Person person;
-  private int salary;
+  private final int employeeId;
+  private final Person person;
+  private int salaryInEuro;
 
-  public Employee(int employeeId, Person person, int salary) {
+  public Employee(int employeeId, Person person, int salaryInEuro) {
     this.employeeId = employeeId;
     this.person = person;
-    this.salary = salary;
+    this.salaryInEuro = salaryInEuro;
   }
 
   public int getEmployeeId() {
@@ -18,24 +18,24 @@ public class Employee {
     return person.getName();
   }
 
-  public int getSalary() {
-    return salary;
+  public int getSalaryInEuro() {
+    return salaryInEuro;
   }
 
-  public void setSalary(int salary) throws SalaryDecreaseException, SalaryIncreaseTooHighException {
-    if (this.salary > salary) {
+  public void setSalaryInEuro(int salaryInEuro) throws SalaryDecreaseException, SalaryIncreaseTooHighException {
+    if (salaryInEuro > salaryInEuro) {
       throw new SalaryDecreaseException();
     }
 
-    double change = (double) (salary - this.salary) / this.salary;
+    double change = (double) (salaryInEuro - this.salaryInEuro) / this.salaryInEuro;
     if (change > 0.1) {
       throw new SalaryIncreaseTooHighException();
     }
 
-    this.salary = salary;
+    this.salaryInEuro = salaryInEuro;
   }
 
-  public void print() {
-    System.out.println(employeeId + " - " + getName() + " - " + salary + "€");
+  public String toString() {
+    return employeeId + " - " + getName() + " - " + salaryInEuro + "€";
   }
 }
