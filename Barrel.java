@@ -5,18 +5,26 @@ public class Barrel {
 
   public Barrel(int capacity) {
     this.capacity = capacity;
+    fluidLevel = 0;
   }
 
-  public void addFluidLevel(int value) throws BarrelOverflowException {
+  public int getCapacity() {
+    return capacity;
+  }
+
+  public int getFluidLevel() {
+    return fluidLevel;
+  }
+
+  public void addFluid(int value) throws BarrelOverflowException {
     if (fluidLevel + value > capacity) {
       fluidLevel = capacity;
       throw new BarrelOverflowException();
     }
-
     fluidLevel += value;
   }
 
-  public void printFluidLevel() {
-    System.out.println("Fuellstand: " + fluidLevel);
+  public String toString() {
+    return "Barrel [capacity=" + capacity + "] [fluidlevel=" + fluidLevel + "]";
   }
 }

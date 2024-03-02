@@ -19,8 +19,8 @@ public class Exercise {
         if (value <= 0) {
           loop = false;
         } else {
-          barrel.addFluidLevel(value);
-          barrel.printFluidLevel();
+          barrel.addFluid(value);
+          System.out.println(barrel.toString());
         }
       } catch (BarrelOverflowException e) {
         System.err.println(e.getMessage());
