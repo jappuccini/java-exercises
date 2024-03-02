@@ -21,6 +21,12 @@ public class Coordinate implements Comparable<Coordinate> {
   }
 
   public int compareTo(Coordinate c) {
-    return Double.valueOf(this.getDistanceToOriginPoint()).compareTo(c.getDistanceToOriginPoint());
+    if (getDistanceToOriginPoint() < c.getDistanceToOriginPoint()) {
+      return 1;
+    } else if (getDistanceToOriginPoint() > c.getDistanceToOriginPoint()) {
+      return -1;
+    } else {
+      return 0;
+    }
   }
 }
