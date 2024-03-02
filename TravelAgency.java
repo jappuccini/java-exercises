@@ -14,10 +14,11 @@ public class TravelAgency {
     partners.add(partner);
   }
 
-  public void print() {
-    System.out.println(name);
+  public String toString() {
+    String result = name + "\n";
     for (Partner p : partners) {
-      p.print();
+      result += p.toString() + '\n';
     }
+    return result;
   }
 }

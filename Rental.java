@@ -2,12 +2,20 @@ import java.util.ArrayList;
 
 public class Rental implements Partner {
 
-  private String name;
-  private ArrayList<Vehicle> vehicles;
+  private final String name;
+  private final ArrayList<Vehicle> vehicles;
 
   public Rental(String name) {
     this.name = name;
     vehicles = new ArrayList<>();
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public ArrayList<Vehicle> getVehicles() {
+    return vehicles;
   }
 
   public void addVehicle(Vehicle vehicle) {
@@ -29,11 +37,11 @@ public class Rental implements Partner {
     }
   }
 
-  public void print() {
-    System.out.println(name);
-    System.out.println("Unsere Fahrzeuge: ");
-    for (Vehicle v : vehicles) {
-      v.print();
+  public String toString() {
+    String result = name + "\n" + "Unsere Fahrzeuge: \n";
+    for (Vehicle vehicle : vehicles) {
+      result += vehicle.toString() + "\n";
     }
+    return result;
   }
 }

@@ -1,3 +1,3 @@
 public interface Partner {
-  void print();
+  public String toString();
 }
