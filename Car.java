@@ -1,6 +1,6 @@
 public final class Car extends Vehicle {
 
-  private int seats;
+  private final int seats;
 
   public Car(String make, String model, Engine engine, int seats) {
     super(make, model, engine);
@@ -12,25 +12,24 @@ public final class Car extends Vehicle {
   }
 
   public void doATurboBoost() {
-    speed *= 2;
+    speedInKmh *= 2;
     System.out.println(
         getMake()
             + " "
             + getModel()
             + " macht einen Turboboost und beschleunigt auf "
-            + speed
+            + speedInKmh
             + " km/h");
   }
 
-  public void print() {
-    System.out.println(
-        getMake()
-            + " "
-            + getModel()
-            + " ("
-            + getEngine().getDescription()
-            + ", "
-            + seats
-            + " Sitzplaetze)");
+  public String toString() {
+    return getMake()
+        + " "
+        + getModel()
+        + " ("
+        + getEngine().getDescription()
+        + ", "
+        + seats
+        + " Sitzplaetze)";
   }
 }
