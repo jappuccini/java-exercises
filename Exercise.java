@@ -19,7 +19,7 @@ public class Exercise {
       car2.accelerate(-20);
       car1.brake(5);
     } catch (InvalidValueException e) {
-      System.err.println(e.getMessage());
+      System.out.println("Ungueltiger Wert: der eingehende Wert muss groesser als Null sein");
     }
 
     travelAgency.print();
