@@ -18,13 +18,13 @@ public class Exercise {
 
         if (day <= 24 || month < 12) {
             christmas = LocalDate.of(year, 12, 24);
-            int x = christmas.getDayOfYear() - inputDate.getDayOfYear();
-            System.out.printf("Tage bis Weihnachte: %d%n", x);
+            int daysUntilChristmas = christmas.getDayOfYear() - inputDate.getDayOfYear();
+            System.out.printf("Tage bis Weihnachte: %d%n", daysUntilChristmas);
         } else {
             christmas = LocalDate.of(year + 1, 12, 24);
-            int a = LocalDate.of(year,12,31).getDayOfYear() - inputDate.getDayOfYear();
-            int b = a + christmas.getDayOfYear();
-            System.out.printf("Tage bis Weihnachten: %d%n",b);
+            int daysUntilNewYear = LocalDate.of(year,12,31).getDayOfYear() - inputDate.getDayOfYear();
+            int daysUntilNextYearsChristmas = daysUntilNewYear + christmas.getDayOfYear();
+            System.out.printf("Tage bis Weihnachten: %d%n",daysUntilNextYearsChristmas);
         }
     }
 }
