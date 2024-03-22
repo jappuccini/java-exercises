@@ -29,6 +29,7 @@ public class Dog {
 
     @Override
     public boolean equals(Object o) {
+        System.out.println("Equals Called --> " + o);
         // return true;
         if (o == this) {
             return true;
