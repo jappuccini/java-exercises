@@ -10,5 +10,4 @@ public class AgeComparator implements Comparator<Human> {
             return -1;
         }
     }
-
 }

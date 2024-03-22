@@ -1,3 +1,4 @@
 package demo.functionalprogramming;
 
-public record Human(int age) {}
+public record Human(int age) {
+}
