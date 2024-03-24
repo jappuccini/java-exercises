@@ -43,5 +43,9 @@ public class Company {
 
         // Lambda Funktion - Kurze Syntax ohne explizite Datentypen
         Collections.sort(employees, (h1, h2) -> h1.age() > h1.age() ? 1 : -1);
+
+        // Lambda Funktion - Als Referenzvariable gespeichert
+        Comparator<Human> ageSorter = (h1, h2) -> h1.age() > h1.age() ? 1 : -1;
+        Collections.sort(employees, ageSorter);
     }
 }
