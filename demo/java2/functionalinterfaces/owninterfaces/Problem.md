@@ -1,4 +1,5 @@
 # Fallbeispiel
+
 Wie sind ein Onlinehändler und stellen eine Platform zum Verkaufen von Produkten bereit.
 Es gibt zwei Teams. Team Warenkorb und Team Produktverwaltung.
 
@@ -8,7 +9,8 @@ Produkte können dem Warenkorb hinzugefügt werden.
 Das Team Produktverwaltung implementiert die Verwaltung aller angebotenen Produkte
 auf der Onlinehändler Plattform.
 
-# Problem 1
+## Problem 1
+
 Anbieter von Produkten bemängeln, dass Käufer Produkte bestellen, obwohl der Bestand
 im Lager nicht ausreicht. Das Produkt Team hat den Fehler identifiziert und festgestellt,
 dass die Produktdetailseite den Lagerbestand anzeigt. Es sollte aber der aktuelle Lagerbestand
@@ -24,11 +26,12 @@ Das Produktverwaltungsteam möchte, dass bei jeder Änderung im Warenkorb ein Pr
 den das Produktverwaltungsteam jederzeit anpassen kann. Für ihre Anpassungen brauchen Sie Zugriff auf alle
 Produkte im Warenkorb.
 
-# Problem 2
-Anbieter von Produkten bemängeln, dass Kaufer Produkte bestellen, obwohl Sie nicht zahlungsfägig sind oder 
+## Problem 2
+
+Anbieter von Produkten bemängeln, dass Kaufer Produkte bestellen, obwohl Sie nicht zahlungsfägig sind oder
 Kunden gar nicht berechtigt sind spezifische Produkte zu kaufen.
 
 Lösung:
 Das Produktverwaltungsteam möchte, dass vor dem Hinzufügen eines Produktes zum Warenkorb ein Programmcode
-ausgeführt wird, den das Produktverwaltungsteam jederzeit anpassen kann. Für ihre Anpassung brauchen Sie 
+ausgeführt wird, den das Produktverwaltungsteam jederzeit anpassen kann. Für ihre Anpassung brauchen Sie
 Zugriff auf das aktuelle Produkt und den Kunden.

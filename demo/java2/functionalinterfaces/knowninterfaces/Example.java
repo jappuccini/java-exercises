@@ -1,4 +1,4 @@
-package demo.functionalinterfaces.owninterfaces;
+package demo.java2.functionalinterfaces.knowninterfaces;
 
 public class Example {
     public static void main(String[] args) {

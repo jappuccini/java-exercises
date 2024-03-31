@@ -1,8 +1,9 @@
-package demo.functionalinterfaces.owninterfaces.interfaces;
+package demo.java2.functionalinterfaces.owninterfaces.interfaces;
 
 import java.util.ArrayList;
 
-import demo.functionalinterfaces.owninterfaces.Product;
+import demo.java2.functionalinterfaces.owninterfaces.Product;
+
 
 @FunctionalInterface
 public interface ProductsChangedConsumer {

@@ -1,4 +1,4 @@
-package demo.functionalprogramming;
+package demo.java2.functionalprogramming;
 
 import java.util.Comparator;
 

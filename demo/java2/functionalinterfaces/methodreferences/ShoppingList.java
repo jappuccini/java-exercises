@@ -1,4 +1,4 @@
-package demo.functionalinterfaces.methodreferences;
+package demo.java2.functionalinterfaces.methodreferences;
 
 import java.util.ArrayList;
 import java.util.function.BiPredicate;

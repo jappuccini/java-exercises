@@ -1,4 +1,4 @@
-package demo.functionalinterfaces.methodreferences;
+package demo.java2.functionalinterfaces.owninterfaces;
 
 public class Example {
     public static void main(String[] args) {
@@ -10,11 +10,8 @@ public class Example {
             System.out.println("Products changed! Size: " + products.size());
         });
 
-        amazing.addProduct(new Product("BMW", 30));
+        amazing.addProduct(new Product("BMW", 30000));
         System.out.println(amazing.products.size());
-
-        amazing.products.forEach(System.out::println);
-        amazing.products.forEach(OneTimePrinter::new);
 
     }
 }
