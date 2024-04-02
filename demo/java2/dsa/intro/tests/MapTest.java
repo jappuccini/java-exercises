@@ -1,4 +1,4 @@
-package demo.java2.introdsa.performance.tests;
+package demo.java2.dsa.intro.tests;
 
 import java.util.HashMap;
 import java.util.Map;

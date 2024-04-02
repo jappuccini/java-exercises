@@ -1,7 +1,7 @@
-package demo.java2.introdsa.performance.examples;
+package demo.java2.dsa.intro.examples;
 
-import demo.java2.introdsa.performance.tests.ListTest;
-import demo.java2.introdsa.performance.tests.MapTest;
+import demo.java2.dsa.intro.tests.ListTest;
+import demo.java2.dsa.intro.tests.MapTest;
 
 public class Deletion {
     public static void main(String[] args) {
