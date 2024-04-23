@@ -9,10 +9,10 @@ public class InsertionSort {
     public static int[] sort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             int previousIndex = i - 1;
-            while (previousIndex >= 0 && numbers[previousIndex] > numbers[i]) {
-                int previousValue = numbers[i - 1];
-                numbers[i - 1] = numbers[i];
-                numbers[i] = previousValue;
+            while (previousIndex >= 0 && numbers[previousIndex] > numbers[previousIndex + 1]) {
+                int previousValue = numbers[previousIndex];
+                numbers[previousIndex] = numbers[previousIndex + 1];
+                numbers[previousIndex + 1] = previousValue;
                 previousIndex--;
             }
         }
