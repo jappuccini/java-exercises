@@ -29,23 +29,23 @@ public class MergeSort {
         merge(numbers, leftSide, rightSide);
     }
 
-    public static void merge(int[] numbers, int[] leftSite, int[] rightSide) {
+    public static void merge(int[] numbers, int[] leftSide, int[] rightSide) {
         int leftIndex = 0;
         int rightIndex = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if (leftIndex >= leftSite.length) { // only right side left
+            if (leftIndex >= leftSide.length) { // only right side left
                 numbers[i] = rightSide[rightIndex];
                 rightIndex = rightIndex + 1;
                 continue;
             } else if (rightIndex >= rightSide.length) { // only left side left
-                numbers[i] = leftSite[leftIndex];
+                numbers[i] = leftSide[leftIndex];
                 leftIndex = leftIndex + 1;
                 continue;
-            } else if (leftSite[leftIndex] <= rightSide[rightIndex]) {
-                numbers[i] = leftSite[leftIndex];
+            } else if (leftSide[leftIndex] <= rightSide[rightIndex]) {
+                numbers[i] = leftSide[leftIndex];
                 leftIndex = leftIndex + 1;
                 continue;
-            } else if (leftSite[leftIndex] > rightSide[rightIndex]) {
+            } else if (leftSide[leftIndex] > rightSide[rightIndex]) {
                 numbers[i] = rightSide[rightIndex];
                 rightIndex = rightIndex + 1;
                 continue;
