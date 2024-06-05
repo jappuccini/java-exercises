@@ -1,2 +1,1 @@
-public class DuplicateKeyException extends Exception {
-}
+public class DuplicateKeyException extends Exception {}
