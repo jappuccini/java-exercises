@@ -18,18 +18,18 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
     collection.get(author).add(book);
   }
 
-  public Optional<Book> getBookByTitle(String title) {
+  public Book getBookByTitle(String title) {
     for (List<Book> books : collection.values()) {
       for (Book b : books) {
         if (b.title().equals(title)) {
-          return Optional.of(b);
+          return b;
         }
       }
     }
-    return Optional.empty();
+    return null;
   }
 
-  public Optional<Author> getMostDiligentAuthor() {
+  public Author getMostDiligentAuthor() {
     Author mostDiligentAuthor = null;
     int mostBooks = 0;
     for (Entry<Author, List<Book>> entry : collection.entrySet()) {
@@ -38,6 +38,6 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
         mostBooks = entry.getValue().size();
       }
     }
-    return Optional.ofNullable(mostDiligentAuthor);
+    return mostDiligentAuthor;
   }
 }
