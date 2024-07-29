@@ -52,15 +52,8 @@ public class Queries {
   }
 
   public Map<Maker, Double> getTotalSoldUnitsInMillionsPerMaker() {
-    Function<Entry<Maker, List<Console>>, Maker> entrySetToMaker = entrySet -> entrySet.getKey();
-    Function<Entry<Maker, List<Console>>, Double> entrySetToSoldUnits =
-        entrySet ->
-            entrySet.getValue().stream()
-                .mapToDouble(console -> console.soldUnitsInMillions())
-                .sum();
-
-    return getAllConsolesByMaker().entrySet().stream()
-        .collect(Collectors.toMap(entrySetToMaker, entrySetToSoldUnits));
+    return consoles.stream()
+            .collect(Collectors.groupingBy(Console::maker, Collectors.summingDouble(Console::soldUnitsInMillions)));
   }
 
   public boolean isAllConsolesWithMoreThan50MillionSoldUnits() {
