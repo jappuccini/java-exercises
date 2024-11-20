@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class Exercise {
 
   public static void main(String[] args) {
-     BookCollection collection = new BookCollection(new HashMap<>());
+    BookCollection collection = new BookCollection(new HashMap<>());
 
     try {
       collection.addAuthor(new Author("Stephen King"));
@@ -21,10 +21,14 @@ public class Exercise {
     collection.addBook(new Author("George RR Martin"), new Book("Das Lied von Eis und Feuer 5"));
     collection.addBook(new Author("George RR Martin"), new Book("Das Lied von Eis und Feuer 6"));
 
-    collection.getBookByTitle("Das Lied von Eis und Feuer 5").ifPresentOrElse(System.out::println,
-        () -> System.out.println("Das gesuchte Buch ist nicht vorhanden"));
-    collection.getMostDiligentAuthor().ifPresentOrElse(System.out::println,
-        () -> System.out.println("Es ist kein entsprechender Autor vorhanden"));
-
+    collection
+        .getBookByTitle("Das Lied von Eis und Feuer 5")
+        .ifPresentOrElse(
+            System.out::println, () -> System.out.println("Das gesuchte Buch ist nicht vorhanden"));
+    collection
+        .getMostDiligentAuthor()
+        .ifPresentOrElse(
+            System.out::println,
+            () -> System.out.println("Es ist kein entsprechender Autor vorhanden"));
   }
 }
