@@ -1,9 +1,9 @@
 public class Vehicle {
 
-  private String make;
-  private String model;
+  private final String make;
+  private final String model;
   private double speedInKmh;
-  private Engine engine;
+  private final Engine engine;
   private static int numberOfVehicles;
 
   public Vehicle(String make, String model, Engine engine) {
