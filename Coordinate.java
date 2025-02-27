@@ -22,9 +22,9 @@ public class Coordinate implements Comparable<Coordinate> {
 
   public int compareTo(Coordinate c) {
     if (getDistanceToOriginPoint() < c.getDistanceToOriginPoint()) {
-      return 1;
-    } else if (getDistanceToOriginPoint() > c.getDistanceToOriginPoint()) {
       return -1;
+    } else if (getDistanceToOriginPoint() > c.getDistanceToOriginPoint()) {
+      return 1;
     } else {
       return 0;
     }
