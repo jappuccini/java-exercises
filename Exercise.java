@@ -31,9 +31,9 @@ public class Exercise {
       e2.setSalaryInEuro(77000);
       e3.setSalaryInEuro(45000);
     } catch (SalaryDecreaseException e) {
-      System.out.println("Das neue Gehalt muss hoeher sein als das bisherige");
+      System.out.println(e.getMessage());
     } catch (SalaryIncreaseTooHighException e) {
-      System.out.println("Das neue Gehalt darf maximal 10% ueber dem bisherigen Gehalt liegen");
+      System.out.println(e.getMessage());
     }
 
     // alternative instance of
@@ -43,10 +43,10 @@ public class Exercise {
       e3.setSalaryInEuro(45000);
     } catch (Exception e) {
       if (e instanceof SalaryDecreaseException) {
-        System.out.println("Das neue Gehalt muss hoeher sein als das bisherige");
+        System.out.println(e.getMessage());
       }
       if (e instanceof SalaryIncreaseTooHighException) {
-        System.out.println("Das neue Gehalt darf maximal 10% ueber dem bisherigen Gehalt liegen");
+        System.out.println(e.getMessage());
       }
     }
 
