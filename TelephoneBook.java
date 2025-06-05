@@ -19,9 +19,7 @@ public class TelephoneBook {
     return Optional.empty();
   }
 
-  public record Person(String name) {
-  }
+  public record Person(String name) {}
 
-  public record TelephoneNumber(String value) {
-  }
+  public record TelephoneNumber(String value) {}
 }
