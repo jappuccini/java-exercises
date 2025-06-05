@@ -1,3 +1,4 @@
+import java.nio.file.OpenOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -23,14 +24,14 @@ public class Queries {
         .sum();
   }
 
-  public Optional<Footballer> getNameOfVfLWolfsburgFootballerWithMostPlayedGames() {
-    Predicate<Footballer> isFromWolfsburg =
-        footballer -> footballer.footballClub().equals(new FootballClub("VfL Wolfsburg", 3, 1145));
-    Comparator<Footballer> sortNumberOfGoalsAscending =
-        (footballer1, footballer2) ->
-            Integer.valueOf(footballer1.numberOfGames()).compareTo(footballer2.numberOfGames());
+  public Optional<String> getNameOfVfLWolfsburgFootballerWithMostPlayedGames() {
+    Predicate<Footballer> isFromWolfsburg = footballer -> footballer.footballClub()
+        .equals(new FootballClub("VfL Wolfsburg", 3, 1145));
+    Comparator<Footballer> sortNumberOfGoalsAscending = (footballer1, footballer2) -> Integer
+        .valueOf(footballer1.numberOfGames()).compareTo(footballer2.numberOfGames());
 
-    return footballers.stream().filter(isFromWolfsburg).max(sortNumberOfGoalsAscending);
+    return footballers.stream().filter(isFromWolfsburg).max(sortNumberOfGoalsAscending)
+        .map(footballer -> footballer.name());
   }
 
   public List<FootballClub> getNameOfAllFootballClubs() {
