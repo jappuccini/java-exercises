@@ -29,15 +29,16 @@ public class Crate<T> {
       throw new CrateIndexOutOfBoundsException();
     }
 
-    T foundBox = switch (box) {
-      case 1 -> box1;
-      case 2 -> box2;
-      case 3 -> box3;
-      case 4 -> box4;
-      case 5 -> box5;
-      case 6 -> box6;
-      default -> null;
-    };
+    T foundBox =
+        switch (box) {
+          case 1 -> box1;
+          case 2 -> box2;
+          case 3 -> box3;
+          case 4 -> box4;
+          case 5 -> box5;
+          case 6 -> box6;
+          default -> null;
+        };
     return Optional.ofNullable(foundBox);
   }
 }

@@ -11,7 +11,8 @@ public class Exercise {
       crate.insertBottle(new WineBottle(), 5);
       crate.insertBottle(new WineBottle(), 6);
 
-      crate.takeBottle(3)
+      crate
+          .takeBottle(3)
           .ifPresentOrElse(
               bottle -> {
                 if (bottle instanceof BeerBottle beerBottle) {
