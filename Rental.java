@@ -28,6 +28,15 @@ public class Rental {
     }
   }
 
+  public void transformAllTrucks() {
+    for (Vehicle c : vehicles) {
+      if (c instanceof Truck) {
+        Truck t = (Truck) c;
+        if (!t.isTransformed()) t.transform();
+      }
+    }
+  }
+
   public String toString() {
     String result = name + "\n" + "Unsere Fahrzeuge: \n";
     for (Vehicle vehicle : vehicles) {
