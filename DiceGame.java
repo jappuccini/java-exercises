@@ -43,10 +43,38 @@ public class DiceGame {
   }
 
   private void move(Player player) {
-    dices.add(new Dice(1));
-    dices.add(new Dice(2));
-    dices.add(new Dice(3));
+    int input;
     System.out.println(player.getName() + " hat aktuell " + player.getScore() + " Punkte");
+    if (player.getSpecialAvailable()) {
+      System.out.print(
+          player.getName() + ", moechtest Du einmalig Spezialwuerfel verwenden (1=ja, 2=nein)?: ");
+      input = scanner.nextInt();
+      if (input == 1) {
+        System.out.print(
+            player.getName()
+                + ", welche Spezialwuerfel moechtest Du verwenden (1=4-5-6-Wuerfel,"
+                + " 2=1-2-3-Wuerfel)?: ");
+        input = scanner.nextInt();
+        if (input == 1) {
+          dices.add(new HighValueDice(4));
+          dices.add(new HighValueDice(5));
+          dices.add(new HighValueDice(6));
+        } else {
+          dices.add(new LowValueDice(7));
+          dices.add(new LowValueDice(8));
+          dices.add(new LowValueDice(9));
+        }
+        player.setSpecialAvailable(false);
+      } else {
+        dices.add(new Dice(1));
+        dices.add(new Dice(2));
+        dices.add(new Dice(3));
+      }
+    } else {
+      dices.add(new Dice(1));
+      dices.add(new Dice(2));
+      dices.add(new Dice(3));
+    }
     System.out.print(player.getName() + ", moechtest Du wuerfeln (true, false)?: ");
     if (scanner.nextBoolean()) {
       diceCup.rollTheDices(dices);
