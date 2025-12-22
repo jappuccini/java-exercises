@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Rental {
+public class Rental implements Partner {
 
   private final String name;
   private final ArrayList<Vehicle> vehicles;
