@@ -17,6 +17,39 @@ public class Exercise {
     company.addEmployee(new Employee(4, new Person("Peter Schneider"), 55000));
     company.addEmployee(new Employee(5, new Person("Miriam Albers"), 90000));
 
+    try {
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
+    } catch (SalaryDecreaseException | SalaryIncreaseTooHighException e) {
+      System.err.println(e.getMessage());
+    }
+
+    // alternative multiple catch:
+    try {
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
+    } catch (SalaryDecreaseException e) {
+      System.out.println(e.getMessage());
+    } catch (SalaryIncreaseTooHighException e) {
+      System.out.println(e.getMessage());
+    }
+
+    // alternative instance of
+    try {
+      e1.setSalaryInEuro(55000);
+      e2.setSalaryInEuro(77000);
+      e3.setSalaryInEuro(45000);
+    } catch (Exception e) {
+      if (e instanceof SalaryDecreaseException) {
+        System.out.println(e.getMessage());
+      }
+      if (e instanceof SalaryIncreaseTooHighException) {
+        System.out.println(e.getMessage());
+      }
+    }
+
     System.out.println(company.toString());
   }
 }
