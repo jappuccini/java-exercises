@@ -2,7 +2,7 @@ public class Vehicle {
 
   private String make;
   private String model;
-  private double speedInKmh;
+  protected double speedInKmh;
   private Engine engine;
   private static int numberOfVehicles;
 
