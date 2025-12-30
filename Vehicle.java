@@ -1,14 +1,16 @@
 public class Vehicle {
 
-  private String make;
-  private String model;
+  private final String make;
+  private final String model;
   private double speedInKmh;
+  private final Engine engine;
   private static int numberOfVehicles;
 
-  public Vehicle(String make, String model) {
+  public Vehicle(String make, String model, Engine engine) {
     this.make = make;
     this.model = model;
     Vehicle.numberOfVehicles++;
+    this.engine = engine;
   }
 
   public String getMake() {
@@ -19,12 +21,12 @@ public class Vehicle {
     return model;
   }
 
-  public double getSpeedInKmh() {
-    return speedInKmh;
+  public Engine getEngine() {
+    return engine;
   }
 
-  public static int getNumberOfVehicles() {
-    return Vehicle.numberOfVehicles;
+  public double getSpeedInKmh() {
+    return speedInKmh;
   }
 
   public void accelerate(int valueInKmh) {
@@ -38,6 +40,10 @@ public class Vehicle {
   }
 
   public String toString() {
-    return make + " " + model;
+    return getMake() + " " + getModel() + " (" + getEngine().getDescription() + ")";
+  }
+
+  public static int getNumberOfVehicles() {
+    return Vehicle.numberOfVehicles;
   }
 }
