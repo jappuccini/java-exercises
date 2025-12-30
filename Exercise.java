@@ -1,23 +1,15 @@
+import java.util.ArrayList;
+
 public class Exercise {
 
   public static void main(String[] args) {
-    Player player1 = new Player("Hans");
-    Player player2 = new Player("Lisa");
+    ArrayList<Player> players = new ArrayList<>();
 
-    Dice dice1 = new Dice(1);
-    Dice dice2 = new Dice(2);
+    players.add(new Player("Hans"));
+    players.add(new Player("Lisa"));
+    players.add(new Player("Peter"));
+    DiceGame diceGame = new DiceGame(players);
 
-    dice1.rollTheDice();
-    System.out.println(player1.getName() + " wuerfelt eine " + dice1.getValue());
-    dice2.rollTheDice();
-    System.out.println(player2.getName() + " wuerfelt eine " + dice2.getValue());
-
-    if (dice1.getValue() > dice2.getValue()) {
-      System.out.println(player1.getName() + " gewinnt");
-    } else if (dice1.getValue() < dice2.getValue()) {
-      System.out.println(player2.getName() + " gewinnt");
-    } else {
-      System.out.println("Unentschieden");
-    }
+    diceGame.start();
   }
 }
