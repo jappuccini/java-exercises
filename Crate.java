@@ -1,13 +1,13 @@
-public class Crate {
+public class Crate<T> {
 
-  private Bottle box1;
-  private Bottle box2;
-  private Bottle box3;
-  private Bottle box4;
-  private Bottle box5;
-  private Bottle box6;
+  private T box1;
+  private T box2;
+  private T box3;
+  private T box4;
+  private T box5;
+  private T box6;
 
-  public void insertBottle(Bottle bottle, int box) throws CrateIndexOutOfBoundsException {
+  public void insertBottle(T bottle, int box) throws CrateIndexOutOfBoundsException {
     if (box < 1 || box > 6) {
       throw new CrateIndexOutOfBoundsException();
     }
@@ -22,7 +22,7 @@ public class Crate {
     }
   }
 
-  public Bottle takeBottle(int box) throws CrateIndexOutOfBoundsException {
+  public T takeBottle(int box) throws CrateIndexOutOfBoundsException {
     if (box < 1 || box > 6) {
       throw new CrateIndexOutOfBoundsException();
     }
