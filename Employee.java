@@ -22,7 +22,17 @@ public class Employee {
     return salaryInEuro;
   }
 
-  public void setSalaryInEuro(int salaryInEuro) {
+  public void setSalaryInEuro(int salaryInEuro)
+      throws SalaryDecreaseException, SalaryIncreaseTooHighException {
+    if (this.salaryInEuro > salaryInEuro) {
+      throw new SalaryDecreaseException();
+    }
+
+    double change = (double) (salaryInEuro - this.salaryInEuro) / this.salaryInEuro;
+    if (change > 0.1) {
+      throw new SalaryIncreaseTooHighException();
+    }
+
     this.salaryInEuro = salaryInEuro;
   }
 
