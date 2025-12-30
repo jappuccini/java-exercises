@@ -18,12 +18,15 @@ public class Creature {
     return attackValue;
   }
 
+  public void setHitpoints(int hitpoints) {
+    this.hitpoints = hitpoints;
+  }
+
   public int getHitpoints() {
     return hitpoints;
   }
 
-  public void attackCreature(Creature creature) {
-    creature.hitpoints -= this.attackValue;
+  public boolean attackCreature(Creature creature) {
     System.out.println(
         this.name
             + " greift "
@@ -31,6 +34,18 @@ public class Creature {
             + " an und erzielt "
             + this.attackValue
             + " Schaden");
-    System.out.println(creature.name + " hat noch " + creature.hitpoints + " Lebenspunkte");
+    if (this.attackValue >= creature.hitpoints) {
+      creature.hitpoints = 0;
+      System.out.println(creature.name + " wurde vernichtet");
+      return true;
+    } else {
+      creature.hitpoints -= this.attackValue;
+      System.out.println(creature.name + " hat noch " + creature.hitpoints + " Lebenspunkte");
+      return false;
+    }
+  }
+
+  public String toString() {
+    return name + " (" + attackValue + " - " + hitpoints + ")";
   }
 }
