@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 public record BookCollection(HashMap<Author, List<Book>> collection) {
 
@@ -17,18 +18,18 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
     collection.get(author).add(book);
   }
 
-  public Book getBookByTitle(String title) {
+  public Optional<Book> getBookByTitle(String title) {
     for (List<Book> books : collection.values()) {
       for (Book b : books) {
         if (b.title().equals(title)) {
-          return b;
+          return Optional.of(b);
         }
       }
     }
-    return null;
+    return Optional.empty();
   }
 
-  public Author getMostDiligentAuthor() {
+  public Optional<Author> getMostDiligentAuthor() {
     Author mostDiligentAuthor = null;
     int mostBooks = 0;
     for (Entry<Author, List<Book>> entry : collection.entrySet()) {
@@ -37,6 +38,6 @@ public record BookCollection(HashMap<Author, List<Book>> collection) {
         mostBooks = entry.getValue().size();
       }
     }
-    return mostDiligentAuthor;
+    return Optional.ofNullable(mostDiligentAuthor);
   }
 }

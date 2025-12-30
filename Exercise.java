@@ -21,7 +21,14 @@ public class Exercise {
     collection.addBook(new Author("George RR Martin"), new Book("Das Lied von Eis und Feuer 5"));
     collection.addBook(new Author("George RR Martin"), new Book("Das Lied von Eis und Feuer 6"));
 
-    System.out.println(collection.getBookByTitle("Das Lied von Eis und Feuer 5"));
-    System.out.println(collection.getMostDiligentAuthor());
+    collection
+        .getBookByTitle("Das Lied von Eis und Feuer 5")
+        .ifPresentOrElse(
+            System.out::println, () -> System.out.println("Das gesuchte Buch ist nicht vorhanden"));
+    collection
+        .getMostDiligentAuthor()
+        .ifPresentOrElse(
+            System.out::println,
+            () -> System.out.println("Es ist kein entsprechender Autor vorhanden"));
   }
 }
