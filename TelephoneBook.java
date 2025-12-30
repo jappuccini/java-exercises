@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 public class TelephoneBook {
 
@@ -9,13 +10,13 @@ public class TelephoneBook {
     entries.put(person, telephoneNumber);
   }
 
-  public TelephoneNumber getTelephoneNumberByName(String name) {
+  public Optional<TelephoneNumber> getTelephoneNumberByName(String name) {
     for (Entry<Person, TelephoneNumber> entry : entries.entrySet()) {
       if (entry.getKey().name().equals(name)) {
-        return entry.getValue();
+        return Optional.ofNullable(entry.getValue());
       }
     }
-    return null;
+    return Optional.empty();
   }
 
   public record Person(String name) {}
