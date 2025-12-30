@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class FilteredStudents {
@@ -16,7 +17,9 @@ public class FilteredStudents {
     }
   }
 
-  public void printStudents() {
-    this.students.forEach((student) -> System.out.println(student));
+  public void forEach(Consumer<Student> consumer) {
+    for (Student student : students) {
+      consumer.accept(student);
+    }
   }
 }
