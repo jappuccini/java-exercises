@@ -4,7 +4,7 @@ public class Exercise {
     Student steffen = new Student("Steffen", 28);
     Student kid = new Student("Kind", 15);
 
-    FilteredStudents adultStudents = new FilteredStudents((student) -> student.age > 18);
+    FilteredStudents adultStudents = new FilteredStudents((student) -> student.age >= 18);
     adultStudents.add(steffen);
     adultStudents.add(kid);
     adultStudents.printStudents();
